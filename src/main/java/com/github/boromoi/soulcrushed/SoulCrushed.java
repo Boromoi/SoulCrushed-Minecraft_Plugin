@@ -30,14 +30,12 @@ public final class SoulCrushed extends JavaPlugin  implements Listener  {
         @EventHandler
         public void onPlayerDying(PlayerDeathEvent event) {
             Player player = event.getPlayer();
+
             // Send the player's death location in chat to the player who died.
             //Bukkit.getConsoleSender().sendMessage(event.getPlayer().getLastDeathLocation().toString());
 
             // Send the player's death location in chat to every player online.
-            event.deathMessage(Component.text(player.getName() + " has fallen" + " X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
-
-            // Send the player's death location in chat to every player online.
-            //Bukkit.broadcast(Component.text(player.getName() + " has fallen" + " X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
+            event.deathMessage(Component.text(player.getName() + " the weak has fallen" + " X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
         }
 
         @EventHandler
@@ -45,24 +43,3 @@ public final class SoulCrushed extends JavaPlugin  implements Listener  {
         // Set the max hp of the player depending on a death integer.
         }
 }
-
-/*{
-    public String getGreeting() {
-        return "Hello World!";
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new SoulCrushed().getGreeting());
-    }
-}*/
-
-    /*@Override
-    public void onEnable() {
-        // Plugin startup logic
-
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
-    }*/
