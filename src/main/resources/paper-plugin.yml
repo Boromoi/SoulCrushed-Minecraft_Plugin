@@ -1,0 +1,7 @@
+name: SoulCrushed
+version: '${version}'
+main: com.github.boromoi.soulcrushed.SoulCrushed
+api-version: '1.20'
+authors: [Liam van Slingerlandt]
+description: SoulCrushed is a minecraft 1.20.1-161 paper plugin, to reduce max hp after each death for a certain time.
+website: https://github.com/Boromoi/SoulCrushed
