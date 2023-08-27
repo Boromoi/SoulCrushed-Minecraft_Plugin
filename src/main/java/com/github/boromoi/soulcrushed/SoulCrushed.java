@@ -29,13 +29,15 @@ public final class SoulCrushed extends JavaPlugin  implements Listener  {
 
         @EventHandler
         public void onPlayerDying(PlayerDeathEvent event) {
+            Player player = event.getPlayer();
             // Send the player's death location in chat to the player who died.
             //Bukkit.getConsoleSender().sendMessage(event.getPlayer().getLastDeathLocation().toString());
 
-            Player player = event.getPlayer();
+            // Send the player's death location in chat to every player online.
+            event.deathMessage(Component.text(player.getName() + " has fallen" + " X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
 
             // Send the player's death location in chat to every player online.
-            Bukkit.broadcast(Component.text("X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
+            //Bukkit.broadcast(Component.text(player.getName() + " has fallen" + " X: " + player.getLastDeathLocation().getBlockX() + " Y: " + player.getLastDeathLocation().getBlockY() + " Z: " + player.getLastDeathLocation().getBlockZ()));
         }
 
         @EventHandler
